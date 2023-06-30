@@ -1,0 +1,12 @@
+= Spring demo: Kotlin context receivers
+
+This code sample is a Spring boot app whose beans are autowired through Kotlin context receivers.
+
+The application only prints information to the console once components are successfully initialized, then stop immediately.
+
+All code is located in the main class: link:src/main/kotlin/KtCtxReceiverDemoApplication.kt[KtCtxReceiverDemoApplication]. Test injection types:
+
+. Through @Bean annotated function. The function use a context receiver propagated to the underlying created bean. See the `ByConfiguration` class.
+. Through constructor binding. See `ByConstructor`
++
+WARNING: this one does not work yet
