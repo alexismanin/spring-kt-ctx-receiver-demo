@@ -18,7 +18,7 @@ fun main(args: Array<String>) {
 class AppInfo(@Value("\${spring.application.name}") val name: String)
 
 context(AppInfo)
-class ContextBased(val source: String) {
+open class ContextBased(val source: String) {
 	init {
 		println(
 			"""
@@ -36,3 +36,8 @@ class ByConfiguration {
 	@Bean("from-configuration")
 	fun create(): ContextBased = ContextBased("configuration")
 }
+
+// TODO: uncomment once it works
+//context(AppInfo)
+//@Component
+//class ByConstructor() : ContextBased("constructor")
