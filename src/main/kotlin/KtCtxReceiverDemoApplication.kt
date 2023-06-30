@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration
 import org.springframework.stereotype.Component
 
 @SpringBootApplication
-class KtCtxReceiverDemoApplication
+open class KtCtxReceiverDemoApplication
 
 fun main(args: Array<String>) {
 	runApplication<KtCtxReceiverDemoApplication>(*args)
@@ -31,13 +31,12 @@ open class ContextBased(val source: String) {
 }
 
 @Configuration
-class ByConfiguration {
+open class ByConfiguration {
 	context(AppInfo)
 	@Bean("from-configuration")
-	fun create(): ContextBased = ContextBased("configuration")
+	open fun create(): ContextBased = ContextBased("configuration")
 }
 
-// TODO: uncomment once it works
-//context(AppInfo)
-//@Component
-//class ByConstructor() : ContextBased("constructor")
+context(AppInfo)
+@Component
+class ByConstructor() : ContextBased("constructor")
