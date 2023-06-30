@@ -9,4 +9,8 @@ All code is located in the main class: link:src/main/kotlin/KtCtxReceiverDemoApp
 . Through @Bean annotated function. The function use a context receiver propagated to the underlying created bean. See the `ByConfiguration` class.
 . Through constructor binding. See `ByConstructor`
 +
-WARNING: this one does not work yet
+[WARNING]
+====
+See `feat/by-constructor` branch for a working prototype.
+For now, it requires to deactivate Spring kotlin extensions.
+====
